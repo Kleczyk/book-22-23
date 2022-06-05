@@ -1,0 +1,33 @@
+\documentclass{book}
+
+\usepackage{main}		%dołączenie pliku main.sty
+\usepackage{subfiles}	%pakiet do łączenia plików
+\usepackage{graphicx}	%pakiet do wstawiania obrazów
+\usepackage{float}		%pakiet m.in. możliwości lepszego formatowania obrazów
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+\usepackage{makecell}
+\usepackage{amsmath}
+
+\pagestyle{empty}
+
+
+
+
+\begin{document}
+\tableofcontents
+\addcontentsline{toc}{section}{Contents}
+
+\subfile{ch1/ch1}
+\subfile{ch2/ch2}
+\subfile{ch3/ch3}
+\subfile{ch4/ch4}
+\subfile{ch5/ch5}
+\subfile{ch6/ch6}
+\subfile{ch7/ch7}
+\subfile{ch8/ch8}
+\subfile{ch9/ch9}
+\subfile{ch10/ch10}
+\subfile{ch11/ch11}
+
+\end{document}

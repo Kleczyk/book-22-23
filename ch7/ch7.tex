@@ -1,0 +1,349 @@
+\documentclass[../main.tex]{subfiles}
+
+\usepackage{makecell}
+\usepackage{amsmath}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection}{1em}{\normalfont}
+
+\pagestyle{empty}
+
+\setcounter{chapter}{6}
+\pagenumbering{arabic}
+\setcounter{page}{7}
+
+\newenvironment{blockquote}{%
+  \par%
+  \medskip
+  \leftskip=3.5em\rightskip=2em%
+  \noindent\ignorespaces}{%
+  \par\medskip}
+
+
+\begin{document}
+
+\chapter{}
+\label{cha:cha_7}
+
+
+\section{}
+\begin{lstlisting}[numbers=none]
+>> Aug = [A eye(size(A))]
+\end{lstlisting}
+\bigbreak
+Here’s an example session of how it can be employed.
+\bigbreak
+\begin{lstlisting}[numbers=none]
+>> A = rand(3)
+
+A =
+	 0.9501 0.4860 0.4565
+	 0.2311 0.8913 0.0185
+ 	 0.6068 0.7621 0.8214
+ 
+>> Aug = [A eye(size(A))]
+
+Aug =
+ 	 0.9501 0.4860 0.4565 1.0000 0 0
+ 	 0.2311 0.8913 0.0185 0 1.0000 0
+   0.6068 0.7621 0.8214 0 0 1.0000 
+\end{lstlisting}
+\bigbreak
+
+
+\section{}
+\begin{enumerate}[label=\bfseries(\alph*)]
+\item $\begin{array}{lllll}[A]: 3 \times 2 & {[B]: 3 \times 3} & \{C\}: 3 \times 1 & \text { [D]: } 2 \times 4\\ &\hspace*{-1.75cm} [E]: 3 \times 3 &\hspace*{-1.75cm} [F]: 2 \times 3 &\hspace*{-1.75cm} \lfloor G\rfloor: 1 \times 3  \\\end{array} $
+\bigbreak
+\item square: $[B],[E]$; column: $\{C\}$, row: $\lfloor G\rfloor$
+\bigbreak
+\item $a_{12}=5, b_{23}=6, d_{32}=$ undefined, $e_{22}=1, f_{12}=0, g_{12}=6$
+\bigbreak
+\item 
+MATLAB can be used to perform the operations
+\bigbreak
+(1) $[E]+[B]=\left[\begin{array}{ccc}5 & 8 & 13 \\ 8 & 3 & 9 \\ 5 & 0 & 9\end{array}\right]$\quad\quad\quad\quad
+(2) $[E]-[B]=\left[\begin{array}{ccc}3 & -2 & 1 \\ -6 & 1 & 3 \\ -3 & 0 & -1\end{array}\right]$\\\\\\
+(3) $[A]+[F]=$ undefined\quad\quad\quad\quad\quad\quad\quad
+(4) $5[F]=\left[\begin{array}{ccc}20 & 15 & 35 \\ 5 & 10 & 30 \\ 5 & 0 & 20\end{array}\right]$\\\\\\
+(5) $[A] \times[B]=$ undefined\quad\quad\quad\quad\quad\quad\quad
+(6) $[B] \times[A]=\left[\begin{array}{ll}54 & 68 \\ 36 & 45 \\ 24 & 29\end{array}\right]$\\\\\\\\
+(7) $[G] \times[C]=56$\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+(8) $[C]^{T}=\left[\begin{array}{lll}2 & 6 & 1\end{array}\right\rfloor$\\\\\\
+(9) $[D]^{T}=\left[\begin{array}{ll}5 & 2 \\ 4 & 1 \\ 3 & 7 \\ 6 & 5\end{array}\right]$\quad\quad\quad\quad\quad\quad\quad\quad
+(10) $I \times[B]=\left[\begin{array}{lll}4 & 3 & 7 \\ 1 & 2 & 6 \\ 1 & 0 & 4\end{array}\right]$
+\bigbreak
+\section{}
+The terms can be collected to give
+\bigbreak
+$\left[\begin{array}{ccc}
+-7 & 3 & 0 \\
+0 & 4 & 7 \\
+-4 & 3 & -7
+\end{array}\right]\left\{\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right\}=\left\{\begin{array}{c}
+10 \\
+-30 \\
+40
+\end{array}\right\}$
+\bigbreak
+Here is the MATLAB session:
+\bigbreak
+\begin{lstlisting}[numbers=none]
+>> A = [-7 3 0;0 4 7;-4 3 -7];
+>> b = [10;-30;40];
+>> x = A\b
+
+x =
+ 	 -1.0811
+ 	  0.8108
+ 	 -4.7490
+ 	
+>> AT = A'
+
+AT =
+	 -7 0 -4
+ 	  3 4 3
+ 	  0 7 -7
+ 	 
+>> AI = inv(A)
+
+AI =
+ 	 -0.1892 0.0811 0.0811
+ 	 -0.1081 0.1892 0.1892
+ 	  0.0618 0.0347 -0.1081
+\end{lstlisting}
+\bigbreak
+
+\section{}
+$
+\begin{aligned}
+&{[X] \times[Y]=\left[\begin{array}{cc}
+23 & -8 \\
+55 & 56 \\
+-17 & 24
+\end{array}\right]} \\\\
+&{[X] \times[Z]=\left[\begin{array}{cc}
+12 & 8 \\
+-30 & 52 \\
+-23 & 2
+\end{array}\right]} \\\\
+&{[Y] \times[Z]=\left[\begin{array}{cc}
+4 & 8 \\
+-47 & 34
+\end{array}\right]} \\\\
+&{[Z] \times[Y]=\left[\begin{array}{cc}
+6 & 16 \\
+-20 & 32
+\end{array}\right]}
+\end{aligned}$
+\bigbreak
+
+
+\section{}
+Terms can be combined to yield
+\bigbreak
+$\hspace*{0.1cm}2 k x_{1}-k x_{2} \hspace*{1cm}=m_{1} g$ \\
+$
+\begin{aligned}
+-k x_{1}+2 k x_{2}-k x_{3} &=m_{2} g \\
+-k x_{2}+k x_{3} &=m_{3} g
+\end{aligned}$
+\bigbreak
+Substituting the parameter values
+\bigbreak
+$
+\left[\begin{array}{ccc}
+20 & -10 & 0 \\
+-10 & 20 & -10 \\
+0 & -10 & 10
+\end{array}\right]\left\{\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right\}=\left\{\begin{array}{c}
+19.62 \\
+29.43 \\
+24.525
+\end{array}\right\}
+$
+\bigbreak
+A MATLAB session can be used to obtain the solution for the displacements
+\bigbreak
+\begin{lstlisting}[numbers=none]
+>> K=[20 -10 0;-10 20 -10;0 -10 10];
+>> m=[2;3;2.5];
+>> mg=m*9.81;
+>> x=K\mg
+
+x =
+ 	 7.3575
+ 	 12.7530
+ 	 15.2055 
+\end{lstlisting}
+\bigbreak
+
+
+\section{}
+The mass balances can be written as
+\bigbreak %{llrll}
+$\begin{array}{llllr}
+\left(Q_{15}+Q_{12}\right) c_{1} && -Q_{31} c_{3} &&=Q_{01} c_{01} \\\\
+-Q_{12} c_{1}+\left(Q_{23}+Q_{24}+Q_{25}\right) c_{2} &&&& =0 \\\\
+&-Q_{23} c_{2}+\left(Q_{31}+Q_{34}\right) c_{3} &&& =Q_{03} c_{03} \\\\
+&-Q_{24} c_{2} & -Q_{34} c_{3}+Q_{44} c_{4} & -Q_{54} c_{5} & =0 \\\\
+-Q_{15} c_{1} & -Q_{25} c_{2} && +\left(Q_{54}+Q_{55}\right) c_{5} & =0
+\end{array}$
+\bigbreak
+The parameters can be substituted and the result written in matrix form as
+\bigbreak
+$\left[\begin{array}{ccccc}
+6 & 0 & -1 & 0 & 0 \\
+-3 & 3 & 0 & 0 & 0 \\
+0 & -1 & 9 & 0 & 0 \\
+0 & -1 & -8 & 11 & -2 \\
+-3 & -1 & 0 & 0 & 4
+\end{array}\right]\left\{\begin{array}{l}
+c_{1} \\
+c_{2} \\
+c_{3} \\
+c_{4} \\
+c_{5}
+\end{array}\right\}=\left\{\begin{array}{c}
+50 \\
+0 \\
+160 \\
+0 \\
+0
+\end{array}\right\}$
+\bigbreak
+MATLAB can then be used to solve for the concentrations
+\bigbreak
+\begin{lstlisting}[numbers=none]
+>> Q = [6 0 -1 0 0;
+-3 3 0 0 0;
+0 -1 9 0 0;
+0 -1 -8 11 -2;
+-3 -1 0 0 4];
+>> Qc = [50;0;160;0;0];
+>> c = Q\Qc
+
+c =
+ 	 11.5094
+	 11.5094
+ 	 19.0566
+	 16.9983
+ 	 11.5094
+\end{lstlisting}
+\bigbreak
+
+\section{}
+The problem can be written in matrix form as
+\bigbreak
+$\left[\begin{array}{cccccc}
+0.866 & 0 & -0.5 & 0 & 0 & 0 \\
+0.5 & 0 & 0.866 & 0 & 0 & 0 \\
+-0.866 & -1 & 0 & -1 & 0 & 0 \\
+-0.5 & 0 & 0 & 0 & -1 & 0 \\
+0 & 1 & 0.5 & 0 & 0 & 0 \\
+0 & 0 & -0.866 & 0 & 0 & -1
+\end{array}\right]\left\{\begin{array}{c}
+F_{1} \\
+F_{2} \\
+F_{3} \\
+H_{2} \\
+V_{2} \\
+V_{3}
+\end{array}\right\}=\left\{\begin{array}{c}
+0 \\
+-1000 \\
+0 \\
+0 \\
+0 \\
+0
+\end{array}\right\}$
+\bigbreak
+MATLAB can then be used to solve for the forces and reactions,
+\begin{lstlisting}[numbers=none]
+>> A = [0.866 0 -0.5 0 0 0;
+0.5 0 0.866 0 0 0;
+-0.866 -1 0 -1 0 0;
+-0.5 0 0 0 -1 0;
+0 1 0.5 0 0 0;
+0 0 -0.866 0 0 -1]
+>> b = [0 -1000 0 0 0 0]';
+>> F = A\b
+
+F =
+ -500.0220
+  433.0191
+ -866.0381
+ -0.0000
+  250.0110
+  749.9890
+\end{lstlisting}
+\bigbreak
+Therefore,
+\bigbreak
+$\begin{array}{llllll}
+F_{1}=-500 && F_{2}=433 && F_{3}=-866 \\
+H_{2}=0 && V_{2}=250 && V_{3}=750 
+\end{array}$
+\bigbreak
+
+
+\section{}
+\bigbreak
+The problem can be written in matrix form as
+\bigbreak
+$\left[\begin{array}{cccccc}1 & 1 & 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 1 & -1 & 0 \\ 0 & 0 & -1 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 1 & -1 \\ 0 & 10 & -10 & 0 & -15 & -5 \\ 5 & -10 & 0 & -20 & 0 & 0\end{array}\right]\left\{\begin{array}{l}i_{12} \\ i_{52} \\ i_{32} \\ i_{65} \\ i_{54} \\ i_{43}\end{array}\right\}=\left\{\begin{array}{c}0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 200\end{array}\right\}$
+\bigbreak
+MATLAB can then be used to solve for the currents,
+\bigbreak
+\begin{lstlisting}[numbers=none]
+>> A = [1 1 1 0 0 0 ;
+0 -1 0 1 -1 0;
+0 0 -1 0 0 1;
+0 0 0 0 1 -1;
+0 10 -10 0 -15 -5;
+5 -10 0 -20 0 0];
+>> b = [0 0 0 0 0 200]';
+>> i = A\b
+
+i =
+ 	  6.1538
+	 -4.6154
+ 	 -1.5385
+ 	 -6.1538
+ 	 -1.5385
+ 	 -1.5385
+\end{lstlisting}
+\bigbreak
+
+\section{}
+\begin{lstlisting}[numbers=none]
+ >> k1 = 10;k2 = 40;k3 = 40;k4 = 10;
+>> m1 = 1;m2 = 1;m3 = 1;
+>> km = [(1/m1)*(k2+k1), -(k2/m1),0;
+-(k2/m2), (1/m2)*(k2+k3), -(k3/m2);
+0, -(k3/m3),(1/m3)*(k3+k4)];
+>> x = [0.05;0.04;0.03];
+>> kmx = km*x
+
+kmx =
+ 		0.9000
+		0.0000
+ 	 -0.1000
+ 
+\end{lstlisting}
+\bigbreak
+Therefore, $\ddot{x}_{1}=-0.9, \ddot{x}_{2}=0$, and $\ddot{x}_{3}=0.1 \mathrm{~m} / \mathrm{s}^{2}$.
+
+ 
+ 
+\end{enumerate}
+\end{document}
+
