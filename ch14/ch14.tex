@@ -1,0 +1,688 @@
+\documentclass[../main.tex]{subfiles}
+
+
+
+
+
+\begin{document}
+\chapter{}
+\label{cha:cha_14}
+
+\section{}
+(a) Newton's polynomial. Ordering of points:
+	\bigbreak
+$
+\begin{array}{ll}
+x_{1}=3 & f\left(x_{1}\right)=6.5 \\
+x_{2}=4 & f\left(x_{2}\right)=2 \\
+x_{3}=2.5 & f\left(x_{3}\right)=7 \\
+x_{4}=5 & f\left(x_{4}\right)=0
+\end{array}
+$
+	\bigbreak
+\begin{blockquote}
+Note that based purely on the distance from the unknown, the fourth point would be $(2,5)$. However, because it provides better balance and is located only a little bit farther from the unknown, the point at $(5,0)$ is chosen.
+\end{blockquote}
+	\bigbreak
+First order:
+	\bigbreak
+$
+f_{1}(3.4)=6.5+\dfrac{2-6.5}{4-3}(3.4-3)=6.5+(-4.5)(3.4-3)=4.7
+$
+	\bigbreak
+Second order:
+	\bigbreak
+$
+\begin{aligned}
+f_{2}(3.4) &=4.7+\dfrac{\dfrac{7-2}{2.5-4}-(-4.5)}{2.5-3}(3.4-3)(3.4-4) \\
+=& 4.7+\dfrac{-3.333333-(-4.5)}{2.5-3}(3.4-3)(3.4-4) \\
+=& 4.7+(-2.333333)(3.4-3)(3.4-4)=5.259887
+\end{aligned}
+$
+	\bigbreak
+Third order:
+	\bigbreak
+$
+\begin{aligned}
+f_{3}(3.4)=5.259887+\dfrac{\dfrac{\dfrac{0-7}{5-2.5}-(-3.333333)}{5-4}-(-2.333333)}{5-3}(3.4-3)(3.4-4)(3.4-2.5)\\
+=5.259887+\dfrac{\dfrac{-2.8-(-3.333333)}{5-4}-(-2.333333)}{5-3}(3.4-3)(3.4-4)(3.4-2.5)\\
+=5.259887+\dfrac{0.5333333-(-2.333333)}{5-3}(3.4-3)(3.4-4)(3.4-2.5)=4.95152
+\end{aligned}
+$
+	\bigbreak
+(b) Lagrange polynomial.
+	\bigbreak
+First order:
+	\bigbreak
+$f_{1}(3.4)=\dfrac{3.4-4}{3-4} 6.5+\dfrac{3.4-3}{4-3} 2=4.7$
+	\bigbreak
+Second order:
+	\bigbreak
+$f_{2}(3.4)=\dfrac{(3.4-4)(3.4-2.5)}{(3-4)(3-2.5)} 6.5+\dfrac{(3.4-3)(3.4-2.5)}{(4-3)(4-2.5)} 2+\dfrac{(3.4-3)(3.4-4)}{(2.5-3)(2.5-4)} 7=5.259887$
+	\bigbreak
+Third order:
+	\bigbreak
+$
+\begin{aligned}
+f_{3}(3.4)=\dfrac{(3.4-4)(3.4-2.5)(3.4-5)}{(3-4)(3-2.5)(3-5)} 6.5+\dfrac{(3.4-3)(3.4-2.5)(3.4-5)}{(4-3)(4-2.5)(4-5)} 2\\
++ \dfrac{(3.4-3)(3.4-4)(3.4-5)}{(2.5-3)(2.5-4)(2.5-5)} 7+\dfrac{(3.4-3)(3.4-4)(3.4-2.5)}{(5-3)(5-4)(5-2.5)} 0=4.95152
+\end{aligned}
+$
+	\bigbreak
+
+
+
+\section{}
+\begin{blockquote}
+The points can be ordered so that they are close to and centered around the unknown. A divided-difference table can then be developed as
+\end{blockquote}
+	\bigbreak
+\begin{tabular}{cccccc}
+\hline
+$x$ & $f(x)$ & First & Second & Third & Fourth \\
+\hline
+3 & $5.25$ & $7.25$ & 2 & $0.25$ & 0 \\
+5 & $19.75$ & $5.25$ & $2.75$ & $0.25$ &  \\
+2 & 4 & 8 & $1.75$ &  &  \\
+6 & 36 & $6.25$ &  &  &  \\
+1 & $4.75$ &  &  &  &  \\
+\hline
+\end{tabular}
+	\bigbreak
+\begin{blockquote}
+Note that the fact that the fourth divided difference is zero means that the data was generated with a third-order polynomial.
+\end{blockquote}
+	\bigbreak
+First order:
+	\bigbreak
+$f_{1}(4)=5.25+7.25(4-3)=12.5$
+	\bigbreak
+Second order:
+	\bigbreak
+$f_{2}(4)=12.5+(4-3)(4-5) 2=10.5$
+	\bigbreak
+Third order:
+	\bigbreak
+$f_{3}(4)=10.5+(4-3)(4-5)(4-2) 0.25=10$
+	\bigbreak
+Fourth order:
+	\bigbreak
+$f_{3}(4)=10.5+(4-3)(4-5)(4-2)(4-6) 0=10$
+	\bigbreak
+
+
+
+\section{}
+Lagrange polynomial.
+First order:
+	\bigbreak
+$f_{1}(4)=\dfrac{4-5}{3-5} 5.25+\dfrac{4-3}{5-3} 19.75=12.5$
+	\bigbreak
+Second order:
+	\bigbreak
+$f_{2}(4)=\dfrac{(4-5)(4-2)}{(3-5)(3-2)} 5.25+\dfrac{(4-3)(4-2)}{(5-3)(5-2)} 19.75+\dfrac{(4-3)(4-5)}{(2-3)(2-5)} 4=10.5$
+	\bigbreak
+Third order:
+	\bigbreak
+$
+\begin{aligned}
+f_{3}(4)=\dfrac{(4-5)(4-2)(4-6)}{(3-5)(3-2)(3-6)} 5.25+\dfrac{(4-3)(4-2)(4-6)}{(5-3)(5-2)(5-6)} 19.75\\
++ \dfrac{(4-3)(4-5)(4-6)}{(2-3)(2-5)(2-6)} 4+\dfrac{(4-3)(4-5)(4-2)}{(6-3)(6-5)(6-2)} 36=10
+\end{aligned}
+$
+	\bigbreak
+
+
+
+\section{}
+Lagrange polynomial.
+	\bigbreak
+First order:
+	\bigbreak
+$f_{1}(4)=\frac{4-5}{3-5} 5.25+\frac{4-3}{5-3} 19.75=12.5$
+	\bigbreak
+Second order:
+	\bigbreak
+$f_{2}(4)=\frac{(4-5)(4-2)}{(3-5)(3-2)} 5.25+\frac{(4-3)(4-2)}{(5-3)(5-2)} 19.75+\frac{(4-3)(4-5)}{(2-3)(2-5)} 4=10.5$
+	\bigbreak
+Third order:
+	\bigbreak
+$
+\begin{aligned}
+f_{3}(4)=\frac{(4-5)(4-2)(4-6)}{(3-5)(3-2)(3-6)} 5.25+\frac{(4-3)(4-2)(4-6)}{(5-3)(5-2)(5-6)} 19.75 \\
++ \frac{(4-3)(4-5)(4-6)}{(2-3)(2-5)(2-6)} 4+\frac{(4-3)(4-5)(4-2)}{(6-3)(6-5)(6-2)} 36=10
+\end{aligned}
+$
+\begin{enumerate}[label=\bfseries(\alph*)]
+\item The points can be ordered so that they are close to and centered around the unknown. A
+divided-difference table can then be developed as
+	\bigbreak 
+\begin{tabular}{ccccc}
+\hline
+$T,{ }^{\circ} \mathrm{C}$ & $c=10 \mathrm{~g} / \mathrm{L}$ & first & second & third \\
+\hline
+10 & $10.1$ & $-0.214$ & $0.0026$ & $0.000107$ \\
+15 & $9.03$ & $-0.227$ & $0.003667$ &  \\
+5 & $11.3$ & $-0.20867$ &  &  \\
+20 & $8.17$ &  &  &  \\
+\hline
+\end{tabular}
+	\bigbreak
+Second order:
+	\bigbreak
+$f_{2}(4)=10.1-0.214(12-10)+0.0026(12-10)(12-15)=9.6564$
+	\bigbreak
+Third order:
+	\bigbreak
+$f_{3}(4)=9.6564+0.000107(12-10)(12-15)(12-5)=9.65192$
+	\bigbreak
+\item First, linear interpolation can be used to generate values for T = 10 and 15 at c = 15,
+	\bigbreak
+$f_{1}(T=10, c=15)=10.1+\frac{8.96-10.1}{20-10}(15-10)=9.53$
+	\bigbreak
+$f_{1}(T=15, c=15)=9.03+\frac{8.08-9.03}{20-10}(15-10)=8.555$
+	\bigbreak
+These values can then be used to determine the result at T = 12,
+	\bigbreak
+$f_{1}(T=12, c=15)=9.53+\frac{8.555-9.53}{15-10}(12-10)=9.14$
+	\bigbreak
+\item First, quadratic interpolation can be used to generate values for T = 5, 10 and 15 at c = 15,
+	\bigbreak
+$f_{2}(T=5, c=15)=12.8-0.15(15-0)+0.0025(15-0)(15-10)=10.7375$
+	\bigbreak
+$f_{2}(T=10, c=15)=11.3-0.12(15-0)+0.0003(15-0)(15-10)=9.5225$
+	\bigbreak
+$f_{2}(T=15, c=15)=10.1-0.107(15-0)+0.0006(15-0)(15-10)=8.54$
+	\bigbreak
+These values can then be used to determine the result at T = 12,
+	\bigbreak
+$f_{2}(T=12, c=15)=10.7375-0.243(12-5)+0.00465(12-5)(12-10)=9.1016$
+\end{enumerate}
+	\bigbreak
+
+
+
+\section{}
+MATLAB can be used to generate a cubic polynomial through the first 4 points in the table,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> x = [1 2 3 4];
+>> fx = [3.6 1.8 1.2 0.9];
+>> p = polyfit(x,fx,3)
+p =
+	-0.1500	1.5000	-5.2500	7.5000 
+\end{lstlisting}
+	\bigbreak
+Therefore, the roots problem to be solved is
+	\bigbreak
+$1.6=-0.15 x^{3}+1.5 x^{2}-5.25 x+7.5$
+	\bigbreak
+or
+	\bigbreak
+$f(x)=-0.15 x^{3}+1.5 x^{2}-5.25 x+5.9=0$
+	\bigbreak
+\begin{blockquote}
+Bisection can be employed the root of this polynomial. Using initial guesses of $x_{l}=2$ and $x_{u}$ $=3$, a value of $2.2156$ is obtained with $\varepsilon_{\mathrm{a}}=0.00069 \%$ after 16 iterations.
+\end{blockquote}
+	\bigbreak
+
+
+
+\section{}
+\begin{enumerate}[label=\bfseries(\alph*)]
+\item Analytical:
+	\bigbreak
+$0.93=\frac{x^{2}}{1+x^{2}}$
+	\bigbreak
+$0.93+0.93 x^{2}=x^{2}$
+	\bigbreak
+$0.07 x^{2}=0.93$
+	\bigbreak
+$x=\sqrt{\frac{0.93}{0.07}}=3.644957$
+	\bigbreak
+\item A quadratic interpolating polynomial can be fit to the last three points using the polyfit function,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> format long
+>> x = [3 4 5];
+>> y = x.^2./(1+x.^2);
+>> p = polyfit(x,y,2)
+p =
+	-0.01040723981900	0.11402714932127	0.65158371040724 
+\end{lstlisting}
+	\bigbreak
+Thus, the best fit quadratic is
+	\bigbreak
+$f_{2}(x)=-0.01040724 x^{2}+0.11402715 x+0.6515837$
+	\bigbreak
+We must therefore find the root of
+	\bigbreak
+$0.93=-0.01040724 x^{2}+0.11402715 x+0.6515837$
+	\bigbreak
+or
+	\bigbreak
+$f(x)=-0.01040724 x^{2}+0.11402715 x-0.2784163$
+	\bigbreak
+The quadratic formula yields
+	\bigbreak
+$x=\frac{-0.11402715 \pm \sqrt{(0.11402715)^{2}-4(-0.01040724)(-0.2784163)}}{2(0.11402715)}=\frac{7.2835775}{3.6729442}$
+	\bigbreak
+Thus, the estimate is 3.67294421.
+	\bigbreak
+\item A cubic interpolating polynomial can be fit to the last four points using the polyfit function,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> format long
+>> x = [2 3 4 5];
+>> y=x.^2./(1+x.^2)
+>> p = polyfit(x,y,3)
+p =
+	0.00633484162896	-0.08642533936652	0.41176470588235	0.27149321266968
+\end{lstlisting}
+	\bigbreak
+Thus, the best fit cubic is
+	\bigbreak
+$f_{3}(x)=0.006334842 x^{3}-0.08642534 x^{2}+0.4117647 x+0.2714932$
+	\bigbreak
+We must therefore find the root of 
+	\bigbreak
+$0.93=0.006334842 x^{3}-0.08642534 x^{2}+0.4117647 x+0.2714932$
+	\bigbreak
+or
+	\bigbreak
+$f(x)=0.006334842 x^{3}-0.08642534 x^{2}+0.4117647 x-0.6585068$
+	\bigbreak
+Bisection can be employed the root of this polynomial. Using initial guesses of $x_{l}=3$ and $x_{u}$ $=4$, a value of $3.61883$ is obtained.
+	\bigbreak
+\end{enumerate}
+
+
+
+\section{}
+\begin{enumerate}[label=\bfseries(\alph*)]
+\item Because they bracket the unknown, the two last points are used for linear interpolation,
+	\bigbreak
+$f_{1}(0.118)=6.5453+\frac{6.7664-6.5453}{0.12547-0.11144}(0.118-0.11144)=6.6487$
+	\bigbreak
+\item The quadratic interpolation can be implemented easily in MATLAB,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> v = [0.10377 0.1144 0.12547];
+>> s = [6.4147 6.5453 6.7664];
+>> p = polyfit(v,s,2)
+p =
+	354.2358 -64.9976 9.3450
+>> polyval(p,0.118)
+ans =
+	6.6077
+\end{lstlisting}
+	\bigbreak
+Therefore, to the level of significance reported in the table the estimated entropy is 6.6077
+	\bigbreak
+\item The inverse interpolation can be implemented in MATLAB. First, as in part \textbf{(b)}, we can
+fit a quadratic polynomial to the data to yield,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+p =
+	354.2358	-64.9976	9.3450 
+\end{lstlisting}
+\bigbreak
+We must therefore find the root of 
+	\bigbreak
+$6.45=354.2358 x^{2}-64.9976 x+9.3450$
+	\bigbreak
+or
+	\bigbreak
+$6.45=354.2358 x^{2}-64.9976 x+2.8950$
+	\bigbreak
+In MATLAB, we can generate this polynomial by subtracting 6.45 from the constant
+coefficient of the polynomial 
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> p(3)=p(3)-6.45
+p =
+	 354.2358	-64.9976	2.8950
+\end{lstlisting}
+	\bigbreak
+Then, we can use the roots function to determine the solution,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> roots(p)
+ans =
+	0.1074
+	0.0761 
+\end{lstlisting}
+	\bigbreak
+Thus, the value of the specific volume corresponding to an entropy of 6.45 is 0.1074.
+	\bigbreak
+\end{enumerate}
+
+
+
+\section{}
+\begin{blockquote}
+This problem is nicely suited for the Newton interpolating polynomial. First, we can order
+the data so that the points are closest to and centered around the unknown,
+\end{blockquote}
+	\bigbreak
+\begin{tabular}{cc}
+\hline
+$T$ & $D$ \\
+\hline
+300 & $1.139$ \\
+350 & $0.967$ \\
+400 & $0.854$ \\
+250 & $1.367$ \\
+450 & $0.759$ \\
+200 & $1.708$ \\
+\hline
+\end{tabular}
+	\bigbreak
+Then we can generate the divided difference table
+	\bigbreak
+\begin{tabular}{ccccccc}
+T&D&first&second&third&fourth&fifth\\
+300&1.139&-0.003440&1.18000E-05&4.00000E-09&-2.93333E-10&-2.77333E-12\\
+350&0.967&-0.002260&1.16000E-05&-4.00000E-08&-1.60000E-11\\
+400&0.854&-0.003420&7.60000E-06&-3.76000E-08\\
+250&1.367&-0.003040&1.51200E-05\\
+450&0.759&-0.003796\\
+200&1.708
+\end{tabular}
+	\bigbreak
+First-order (linear) fit:
+	\bigbreak
+$f_{1}(330)=1.139-0.00344(330-300)=1.0358$
+	\bigbreak
+Thus, the linear estimate is 1.036 to the level of significant digits provided in the original
+data. 
+	\bigbreak
+Second-order (quadratic) fit:
+	\bigbreak
+$f_{2}(330)=1.0358+1.18 \times 10^{-5}(330-300)(330-350)=1.0287$
+	\bigbreak
+The quadratic estimate is 1.029 to the level of significant digits provided in the original
+data. 
+	\bigbreak
+Third-order (cubic) fit:
+	\bigbreak
+$f_{3}(330)=1.0287+4 \times 10^{-9}(330-300)(330-350)(330-400)=1.028888$
+	\bigbreak
+The cubic estimate is also 1.029.
+	\bigbreak
+Fourth-order (quartic) fit:
+	\bigbreak
+$f_{4}(330)=1.0289-2.93333^{-10}(330-300)(330-350)(330-400)(330-250)=1.0279$
+	\bigbreak
+\begin{blockquote}
+The quartic estimate now seems to be diverging slightly by moving to a value of 1.028.
+This may be an initial indication that the higher-order terms are beginning to induce slight
+oscillations. 
+\end{blockquote}
+	\bigbreak
+Fifth-order (quintic) fit:
+	\bigbreak
+$f_{2}(330)=1.0279-2.77333^{-12}(330-300)(330-350)(330-400)(330-250)(330-450)=1.02902$
+	\bigbreak
+\begin{blockquote}
+Oscillations are now evidently occurring as the fifth-order estimate now jumps back up to
+slightly above a value of 1.029. 
+\end{blockquote}
+	\bigbreak
+\begin{blockquote}
+On the basis of the foregoing, I would conclude that the cubic equation provides the best
+approximation and that a value of 1.029 is a sound estimate to the level of significant digits
+provided in the original data. 
+\end{blockquote}
+	\bigbreak
+\begin{blockquote}
+Inverse interpolation can be now used to determine the temperature corresponding to the
+value of density of 1.029. First, MATLAB can be used to fit a cubic polynomial through
+the four points that bracket this value. Interestingly, because of the large values of the
+temperatures, we get an error message,
+\end{blockquote}
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> T = [250 300 350 400];
+>> D =[1.3670 1.139 0.967 0.854];
+>> p = polyfit(T,D,3)
+Warning: Polynomial is badly conditioned. Remove repeated data points
+	or try centering and scaling as described in HELP POLYFIT.
+(Type "warning off MATLAB:polyfit:RepeatedPointsOrRescale" to suppress
+this warning.)
+> In polyfit at 78
+
+
+p =
+	0.0000	0.0000	-0.0097	3.2420 
+\end{lstlisting}
+	\bigbreak
+\begin{blockquote}
+Let’s disregard this warn and proceed to adjust the polynomial so that it can be used to
+solve the inverse interpolation problem. To do this, we subtract the specified value of the
+density from the polynomial’s constant coefficient 
+\end{blockquote}
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> p(4)=p(4)-1.029
+
+
+p =
+	0.0000	0.0000	-0.0097	2.2130 
+\end{lstlisting}
+	\bigbreak
+Then we can use the roots function to determine the temperature that corresponds to this
+value
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> roots(p)
+ans =
+	1.0e+003 *
+	-2.8237
+	0.5938
+	0.3300
+\end{lstlisting}
+	\bigbreak
+Thus, even though the polynomial is badly conditioned one of the roots corresponds to T =
+330 as expected.
+	\bigbreak
+\begin{blockquote}
+Now let’s perform the inverse interpolation, but with scaling. To do this, we will merely
+subtract the value at the midpoint of the temperature range (325) from all the temperatures.
+This acts to both reduce the magnitudes of the temperatures and centers them on zero,
+\end{blockquote}
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> format long
+>> D = [1.3670 1.139 0.967 0.854];
+>> T = [250 300 350 400];
+>> T = T - 325; 
+\end{lstlisting}
+	\bigbreak
+Then, the cubic fit can be generated with no error message,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> p = polyfit(T,D,3)
+p =
+	0.00000000400000	0.00001150000000	-0.00344250000000	1.04581250000000 
+\end{lstlisting}
+	\bigbreak
+We can set up the roots problem
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> p(4)=p(4)-1.029
+p =
+	0.00000000400000	0.00001150000000	-0.00344250000000	0.01681250000000 
+\end{lstlisting}
+	\bigbreak
+We can then use the roots function to determine the temperature that corresponds to the
+given density
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> r = roots(p)
+ans =
+	1.0e+003 *
+	-3.14874694489127
+	0.26878060289231
+	0.00496634199799 
+\end{lstlisting}
+	\bigbreak
+By adding back the offset of 325, we arrive at the expected result of 330,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> Tinv = r(3)+325
+Tinv =
+	3.299663419979927e+002 
+\end{lstlisting}
+
+
+
+\section{}
+A MATLAB session provides a handy way to solve this problem
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> i = [-1 -0.5 -0.25 0.25 0.5 1];
+>> V = [-193 -41 -13.5625 13.5625 41 193];
+>> p = polyfit(i,V,5)
+p =
+	0.0000	-0.0000	148.0000	-0.0000	45.0000	0.0000 
+\end{lstlisting}
+	\bigbreak
+The interpolating polynomial is therefore
+	\bigbreak
+$V=148 i^{3}+45 i$
+	\bigbreak
+The polyval function can be used to determine the interpolation at i = 0.1,
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> polyval(p,0.10)
+ans =
+	4.6480 
+\end{lstlisting}
+
+
+
+\section{}
+\begin{blockquote}
+Third-order case: The MATLAB polyfit function can be used to generate the cubic
+polynomial and perform the interpolation, 
+\end{blockquote}
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> x = [1 1.5 2 2.5];
+>> J = [0.765198 0.511828 0.223891 -0.048384];
+>> p = polyfit(x,J,3)
+p =
+	0.0670	-0.3705	0.1014	0.9673
+>> Jpred = polyval(p,1.82)
+Jpred =
+	0.3284
+\end{lstlisting}
+	\bigbreak
+\begin{blockquote}
+The built-in function besselj can be used to determine the true value which can then be
+used to determine the percent relative error 
+\end{blockquote}
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> Jtrue = besselj(0,1.82)
+Jtrue =
+	0.3284
+>> ea = abs((Jtrue-Jpred)/Jtrue)*100
+ea =
+	0.0043
+\end{lstlisting}
+	\bigbreak
+Fourth-order case:
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> x = [1 1.5 2 2.5 3];
+>> J = [0.765198 0.511828 0.223891 -0.048384 -0.260052];
+>> p = polyfit(x,J,4)
+p =
+	-0.0035	0.0916	-0.4330	0.1692	0.9409
+>> Jpred = polyval(p,1.82)
+Jpred =
+	0.3283
+>> Jtrue = besselj(0,1.82);
+>> ea = abs((Jtrue-Jpred)/Jtrue)*100
+ea =
+	0.0302
+\end{lstlisting}
+	\bigbreak
+Fifth-order case:
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> x = [1 1.5 2 2.5 3 0.5];
+>> J = [0.765198 0.511828 0.223891 -0.048384 -0.260052 0.938470];
+>> p = polyfit(x,J,5)
+p =
+	-0.0027	0.0231	-0.0115	-0.2400	-0.0045	1.0008
+>> Jpred = polyval(p,1.82)
+Jpred =
+	0.3284
+>> Jtrue = besselj(0,1.82);
+>> ea = abs((Jtrue-Jpred)/Jtrue)*100
+ea =
+	5.2461e-004 
+\end{lstlisting}
+
+
+
+\section{}
+In the same fashion as Example 14.6, MATLAB can be used to evaluate each of the cases,
+	\bigbreak
+First order:
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> t = [1990 1980];
+>> pop = [249.46 227.23];
+>> ts = (t - 1955)/35;
+>> p = polyfit(ts,pop,1);
+>> polyval(p,(2000-1955)/35)
+ans =
+	271.6900
+\end{lstlisting}
+	\bigbreak
+Second order:
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> t = [t 1970];
+>> pop = [pop 205.05];
+>> ts = (t - 1955)/35;
+>> p = polyfit(ts,pop,2);
+>> polyval(p,(2000-1955)/35)
+ans =
+	271.7400 
+\end{lstlisting}
+	\bigbreak
+Third order:
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> t = [t 1960];
+>> pop = [pop 180.67];
+>> ts = (t - 1955)/35;
+>> p = polyfit(ts,pop,3);
+>> polyval(p,(2000-1955)/35)
+ans =
+	273.9900
+\end{lstlisting}
+	\bigbreak
+Fourth order:
+	\bigbreak
+\begin{lstlisting}[numbers=none]
+>> t = [t 1950];
+>> pop = [pop 152.27];
+>> ts = (t - 1955)/35;
+>> p = polyfit(ts,pop,4);
+>> polyval(p,(2000-1955)/35)
+ans =
+	274.4200
+\end{lstlisting}
+	\bigbreak
+\begin{blockquote}
+Although the improvement is not great, the addition of each term causes the prediction for
+2000 to increase. Thus, using higher-order approximations is moving the prediction closer
+to the actual value of 281.42 that occurred in 2000.
+\end{blockquote}
+\end{document}
