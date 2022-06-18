@@ -1,26 +1,5 @@
 \documentclass[../main.tex]{subfiles}
 
-\usepackage{makecell}
-\usepackage{amsmath}
-
-\titleformat{\section}
-  {\normalsize\bfseries}{\thesection}{1em}{\normalfont}
-
-\pagestyle{empty}
-
-\setcounter{chapter}{3}
-\pagenumbering{arabic}
-\setcounter{page}{7}
-
-\usepackage{listings}
-\lstset{escapeinside={<!}{!>}}
-
-\newenvironment{blockquote}{%
-  \par%
-  \medskip
-  \leftskip=3.5em\rightskip=2em%
-  \noindent\ignorespaces}{%
-  \par\medskip}
 
 
 \begin{document}
@@ -431,23 +410,23 @@ From the plots below, we see that the answer is the \underline{$4^{\text {th }}$
 x=0:0.001:3.2;
 f=x-1-0.5*sin(x);
 subplot(2,2,1);
-plot(x,f);grid;title(<!\textcolor{red}{'f(x)=x-1-0.5*sin(x)'}!>);hold on
+plot(x,f);grid;title('f(x)=x-1-0.5*sin(x)');hold on
 
 f1=x-1.5;
 e1=abs(f-f1);   %Calculates the absolute value of the
 difference/error
 subplot(2,2,2);
-plot(x,e1);grid;title(<!\textcolor{red}{'1st Order Taylor Series Error'}!>);
+plot(x,e1);grid;title('1st Order Taylor Series Error');
 
 f2=x-1.5+0.25.*((x-0.5*pi).^2);
 e2=abs(f-f2);
 subplot(2,2,3);
-plot(x,e2);grid;title(<!\textcolor{red}{'2nd/3rd Order Taylor Series Error'}!>);
+plot(x,e2);grid;title('2nd/3rd Order Taylor Series Error');
 
 f4=x-1.5+0.25.*((x-0.5*pi).^2)-(1/48)*((x-0.5*pi).^4);
 e4=abs(f4-f);
 subplot(2,2,4);
-plot(x,e4);grid;title(<!\textcolor{red}{'4th Order Taylor Series Error'}!>);hold off
+plot(x,e4);grid;title('4th Order Taylor Series Error');hold off
 \end{lstlisting}
 \bigbreak
 \begin{figure}[H]\quad\quad\quad\quad\quad\quad\quad\quad
